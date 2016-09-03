@@ -1,0 +1,44 @@
+---
+- hosts: servers
+  remote_user: root
+
+
+  tasks:
+
+
+    - name: Copy source code to temp loc for test
+      template: src="index-php-anagrams.j2"
+                dest="/tmp/index.php" owner=apache group=apache
+
+
+    - name: PHP Syntax Validator
+      command: /usr/bin/php -l /tmp/index.php 
+      register: result
+      failed_when: "'FAILED' in result.stderr"
+
+#    - name: Error
+#      shell: echo result.stdout > /var/www/html/result
+#      when: result.stdout != "No syntax errors detected in /var/www/html/index.php"
+
+#    - name: No Error
+#      shell: "echo NoError > /var/www/html/result"
+#      when: result.stdout == "No syntax errors detected in /var/www/html/index.php"
+
+
+    - name: Deploy Front End new file's if NO errors
+      template: src="index-php-anagrams.j2"
+                dest="/var/www/html/index.php" owner=apache group=apache
+      when: result.stdout == "No syntax errors detected in /tmp/index.php"
+
+
+   # - name: Restart Apache
+   #   service: name=httpd state=restarted
+
+
+    - debug: var=result.stdout_lines
+
+    - name: Remove Temp file
+      file: dest=/tmp/index.php state=absent
+
+
+

@@ -1,0 +1,4 @@
+---
+- hosts: servers
+- include: requirements.yaml
+- include: php.yaml

@@ -1,0 +1,15 @@
+[servers:children]
+production
+staging
+local
+
+[production]
+54.200.153.197 nickname=FE1 branch=master ansible_ssh_user=root
+54.201.254.132 nickname=FE2 branch=master ansible_ssh_user=root
+
+
+[staging]
+#54.218.32.46 nickname=staging branch=develop ansible_ssh_user=root
+
+[local]
+#localhost.localdomain nickname=local branch=develop

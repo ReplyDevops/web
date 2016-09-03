@@ -1,0 +1,106 @@
+<html>
+
+<body text="#FFFFFF" bgcolor='#000000'>
+		
+<center>
+			 
+		
+</br></br></br><br>
+
+<font color="#0000FF" style="font-size:20px">
+		This program will accept a single word and return all possible anagrams.
+	</font>
+
+</br></br></br></br>
+
+<table  border="0" >
+						
+<TBODY>
+<form method="post" >
+							
+<tr>
+		    							
+</tr>	
+						
+
+<tr>
+		<th colspan=2> Enter A word </th>
+</tr>
+
+<tr>
+<td align=""></td>
+<td align=""></td>								
+</tr>	
+						
+<tr>								
+<td align=""></td>								
+<td align=""></td>							
+</tr>
+
+<tr>
+							
+<td align="center" height="100"><input name="word" >
+
+</tr>
+
+							
+
+							
+<tr>
+<td bgcolor="#000000" colspan="2" align="center">
+
+<input  bgcolor="#4D5D6D" style="color:#; font-size:15;"type="submit" value="       Submit       " class="btn">
+
+</td>							
+</tr>
+
+							
+
+
+<tr>
+
+<td align="center" style="color:red; font-size:19;">
+</br></br>
+<?php
+
+  $word = $_POST['word'];
+
+//---------------------------------------------------Code start ---------------------
+
+// function to generate and print all possible anagrams of $word. (N = strlen($word) number of letters) and check the dictionary.
+
+function loyal($word,$i,$n) {
+   if ($i == $n)
+        echo "$word  \r\n &nbsp;&nbsp;&nbsp;&nbsp;"; 
+
+//. "<br><br>";
+   else {
+        for ($j = $i; $j < $n; $j++) {
+          swap($word,$i,$j);
+          loyal($word, $i+1, $n);
+          swap($word,$i,$j); // backtrack.
+       }
+   }
+}
+
+// function to swap the char at pos $i and $j of $word.
+function swap(&$word,$i,$j) {
+    $temp = $word[$i];
+    $word[$i] = $word[$j];
+    $word[$j] = $temp;
+}   
+
+#$word = $word;
+loyal($word,0,strlen($word)); // call the function with 0 start for $i and number of char for $n
+
+
+?>
+</td>
+</tr>
+</TBODY></table>
+
+
+</FONT></FORM>
+
+</html>
+

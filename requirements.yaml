@@ -1,0 +1,19 @@
+---
+- hosts: servers
+  remote_user: root
+  
+  tasks:
+    - name: Install Apache
+      yum: name=httpd update_cache=yes state=latest
+
+    - name: Install php
+      yum: name=php update_cache=yes state=latest
+
+    - name: Make sure Apache is working
+      service: name=httpd state=started
+      become: yes
+      become_method: sudo
+      remote_user: web
+
+
+
