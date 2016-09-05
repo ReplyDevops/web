@@ -76,36 +76,6 @@
       yum: name=mod_evasive update_cache=yes state=latest
 
 
-# It needs IP-Table installed to be able to block attacks
-
-# systemctl stop firewalld
-# systemctl disable firewalld
-
-# yum update && yum install iptables-services
-
-# systemctl enable iptables
-# systemctl start iptables
-# systemctl status iptables
-
-
-
-# yum update && yum install mod_security mod_evasive
-
-# Look for mod_evasive.conf & mod_security.conf
-# ls -l /etc/httpd/conf.d
-
-
-
-
-# make sure the following lines appear in the top level section of mod_evasive.conf and mod_security.conf, respectively:
-
-# LoadModule evasive20_module modules/mod_evasive24.so
-# LoadModule security2_module modules/mod_security2.so
-
-
-# cd /etc/httpd/modules
-# pwd
-# ls -l | grep -Ei '(evasive|security)'
-
-
+    - name: Restart Apache
+      service: name=httpd state=restarted
 
