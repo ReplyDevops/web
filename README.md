@@ -15,14 +15,11 @@ Guidelines
 
 URL Info:-
 
- - LoadBalancer 
-	http://loyaltyone.xyz
+ - LoadBalancer		http://loyaltyone.xyz
 
- - FE1  
-	http://fe1.loyaltyone.xyz
+ - FrontEnd1  		http://fe1.loyaltyone.xyz
 
- - FE2 
-	http://fe2.loyaltyone.xyz
+ - FrontEnd2		http://fe2.loyaltyone.xyz
 
 
 Used Tools:-
