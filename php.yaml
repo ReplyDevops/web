@@ -31,9 +31,6 @@
       when: result.stdout == "No syntax errors detected in /tmp/index.php"
 
 
-   # - name: Restart Apache
-   #   service: name=httpd state=restarted
-
 
     - debug: var=result.stdout_lines
 
