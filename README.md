@@ -25,9 +25,10 @@ Guidelines
 
 ### Used Tools:-
 
+
 ####  Ansible automations
-- Install all the requirenments "Apache,php,iptables,wget,system update"
-- iptables configurations
+- Install all the requirenments "Apache,php,iptables,wget & system update"
+- Iptables configurations
 - PHP syntax check and deploy
 - Apache configurations
 - Registerd values will not be run again or dublicated
@@ -37,8 +38,8 @@ Guidelines
 - Outbound ALL
 
 ####  Apache 
-- mod_security
-- mod_evasive 
+- Mod_Security
+- Mod_Evasive 
 - Listen on port 80 
 
 ####  AWS 
@@ -51,7 +52,7 @@ Guidelines
 
 ####  DNS
 - Forward
-- cname
+- CNAME
 - A (Host)
 
 ####  GIT
