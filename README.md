@@ -26,7 +26,7 @@ Guidelines
 ### Used Tools:-
 
 1.  Ansible automations
-⋅⋅*	Install all the requirenments "Apache,php,iptables,wget,system update"
+⋅⋅* Install all the requirenments "Apache,php,iptables,wget,system update"
 ⋅⋅*	iptables configurations
 ⋅⋅*	PHP syntax check and deploy
 ⋅⋅*	Apache configurations
