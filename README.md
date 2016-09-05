@@ -1,5 +1,5 @@
 
-Infrastructure Consultant / DevOps
+# Infrastructure Consultant / DevOps
 
 An internet-facing web service accepting a single word and deriving all possible anagrams.
 
@@ -13,7 +13,7 @@ Guidelines
 
 
 
-URL Info:-
+### URL Info:-
 
  - LoadBalancer		http://loyaltyone.xyz
 
@@ -22,41 +22,47 @@ URL Info:-
  - FrontEnd2		http://fe2.loyaltyone.xyz
 
 
-Used Tools:-
+
+### Used Tools:-
 
  - Ansible automations
-	Install all the requirenments "Apache,php,iptables,wget,system update"
-	iptables configurations
-	PHP syntax check and deploy
-	Apache configurations
-	Registerd values will not be run again or dublicated
+⋅⋅*	Install all the requirenments "Apache,php,iptables,wget,system update"
+⋅⋅*	iptables configurations
+⋅⋅*	PHP syntax check and deploy
+⋅⋅*	Apache configurations
+⋅⋅*	Registerd values will not be run again or dublicated
 
  - Iptables
-	Inbound 22,80/tcp
-	Outbound ALL
+⋅⋅*	Inbound 22,80/tcp
+⋅⋅*	Outbound ALL
 
  - Apache - 
-	mod_security
-	mod_evasive 
-	port 80 
+⋅⋅*	mod_security
+⋅⋅*	mod_evasive 
+⋅⋅*	port 80 
+
  - AWS - 
-	ElasticLoadBalancer
-	CloudWatch
-	VPC
-	EC2
-	Route53 "HealthCheck"
-	CloudFormation
+⋅⋅*	ElasticLoadBalancer
+⋅⋅*	CloudWatch
+⋅⋅*	VPC
+⋅⋅*	EC2
+⋅⋅*	Route53 "HealthCheck"
+⋅⋅*	CloudFormation
+
  - DNS
-	Forward
-	cname
-	A (Host)
+⋅⋅*	Forward
+⋅⋅*	cname
+⋅⋅*	A (Host)
+
  - GIT
-	https://github.com/rkhshan/loyalty
+⋅⋅*	https://github.com/rkhshan/loyalty
 
  - PHP/HTML
  
 
-Automation Install Steps:-
+
+
+### Automation Install Steps:-
 
  - Copy your user public key "~/.ssh/id_rsa.pub" to root authorized keys file "~/.ssh/authorized_keys" on both "EC2/RHEL7" FE1/2 'AWS'
 
