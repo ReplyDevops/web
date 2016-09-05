@@ -32,16 +32,16 @@ Guidelines
 - Apache configurations
 - Registerd values will not be run again or dublicated
 
-2.  Iptables
+####  Iptables
 - Inbound 22,80/tcp
 - Outbound ALL
 
-3.  Apache 
+####  Apache 
 - mod_security
 - mod_evasive 
 - Listen on port 80 
 
-4.  AWS 
+####  AWS 
 - ElasticLoadBalancer
 - CloudWatch
 - VPC
@@ -49,15 +49,15 @@ Guidelines
 - Route53 "HealthCheck"
 - CloudFormation
 
-5.  DNS
+####  DNS
 - Forward
 - cname
 - A (Host)
 
-6.  GIT
+####  GIT
 - https://github.com/rkhshan/loyalty
 
-7.  PHP/HTML
+####  PHP/HTML
  
 
 
