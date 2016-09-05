@@ -25,23 +25,23 @@ Guidelines
 
 ### Used Tools:-
 
- - Ansible automations
+1.  Ansible automations
 ⋅⋅*	Install all the requirenments "Apache,php,iptables,wget,system update"
 ⋅⋅*	iptables configurations
 ⋅⋅*	PHP syntax check and deploy
 ⋅⋅*	Apache configurations
 ⋅⋅*	Registerd values will not be run again or dublicated
 
- - Iptables
+2.  Iptables
 ⋅⋅*	Inbound 22,80/tcp
 ⋅⋅*	Outbound ALL
 
- - Apache - 
+3.  Apache - 
 ⋅⋅*	mod_security
 ⋅⋅*	mod_evasive 
 ⋅⋅*	port 80 
 
- - AWS - 
+4.  AWS - 
 ⋅⋅*	ElasticLoadBalancer
 ⋅⋅*	CloudWatch
 ⋅⋅*	VPC
@@ -49,15 +49,15 @@ Guidelines
 ⋅⋅*	Route53 "HealthCheck"
 ⋅⋅*	CloudFormation
 
- - DNS
+5.  DNS
 ⋅⋅*	Forward
 ⋅⋅*	cname
 ⋅⋅*	A (Host)
 
- - GIT
+6.  GIT
 ⋅⋅*	https://github.com/rkhshan/loyalty
 
- - PHP/HTML
+7.  PHP/HTML
  
 
 
