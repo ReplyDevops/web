@@ -9,7 +9,7 @@ local
 
 
 [staging]
-#54.218.32.46 nickname=staging branch=develop ansible_ssh_user=root
+#54.218.31.46 nickname=staging branch=develop ansible_ssh_user=root
 
 [local]
 #localhost.localdomain nickname=local branch=develop
