@@ -26,36 +26,36 @@ Guidelines
 ### Used Tools:-
 
 1.  Ansible automations
-⋅⋅* Install all the requirenments "Apache,php,iptables,wget,system update"
-⋅⋅*	iptables configurations
-⋅⋅*	PHP syntax check and deploy
-⋅⋅*	Apache configurations
-⋅⋅*	Registerd values will not be run again or dublicated
+- Install all the requirenments "Apache,php,iptables,wget,system update"
+- iptables configurations
+- PHP syntax check and deploy
+- Apache configurations
+- Registerd values will not be run again or dublicated
 
 2.  Iptables
-⋅⋅*	Inbound 22,80/tcp
-⋅⋅*	Outbound ALL
+- Inbound 22,80/tcp
+- Outbound ALL
 
-3.  Apache - 
-⋅⋅*	mod_security
-⋅⋅*	mod_evasive 
-⋅⋅*	port 80 
+3.  Apache 
+- mod_security
+- mod_evasive 
+- Listen on port 80 
 
-4.  AWS - 
-⋅⋅*	ElasticLoadBalancer
-⋅⋅*	CloudWatch
-⋅⋅*	VPC
-⋅⋅*	EC2
-⋅⋅*	Route53 "HealthCheck"
-⋅⋅*	CloudFormation
+4.  AWS 
+- ElasticLoadBalancer
+- CloudWatch
+- VPC
+- EC2
+- Route53 "HealthCheck"
+- CloudFormation
 
 5.  DNS
-⋅⋅*	Forward
-⋅⋅*	cname
-⋅⋅*	A (Host)
+- Forward
+- cname
+- A (Host)
 
 6.  GIT
-⋅⋅*	https://github.com/rkhshan/loyalty
+- https://github.com/rkhshan/loyalty
 
 7.  PHP/HTML
  
