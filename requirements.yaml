@@ -11,9 +11,101 @@
 
     - name: Make sure Apache is working
       service: name=httpd state=started
-      become: yes
-      become_method: sudo
-      remote_user: web
+
+
+
+    - name: Stat of one update
+      stat: path=/root/update-done
+      register: update_stat
+
+    - name: Yum Update
+      yum: name=* state=latest
+      when: update_stat.stat.exists == False
+
+    - name: Register for only one update
+      shell: "echo done > /root/update-done"
+      when: update_stat.stat.exists == False
+
+
+# It needs IP-Tables installed to be able to block attacks
+
+    - name: Install iptables
+      yum: name=iptables-services update_cache=yes state=latest
+
+
+
+    - name: Make sure iptables Enabled and Started
+      service: name=iptables enabled=yes state=started
+
+
+
+# Install wget
+
+    - name: Install wget
+      yum: name=wget update_cache=yes state=latest
+
+
+
+# Install Repo epel
+
+    - name: Check if repo file already exist
+      stat: path=/root/epel-release-7-8.noarch.rpm
+      register: repo_stat
+
+
+    - name: Download epel Repo
+      shell: chdir=/root wget http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-8.noarch.rpm
+      when: repo_stat.stat.exists == False
+
+    - name: Install package.
+      yum:
+         name: /root/epel-release-7-8.noarch.rpm
+         state: present
+
+
+# Mod_Security is a Web Application Firewall that execute as a Module on your Web Server and provides protection against various 	      attacks to our web applications. It monitors HTTP traffic and performs real time analysis.
+
+    - name: Install mod_seurity for DDoS Attack protection
+      yum: name=mod_security update_cache=yes state=latest
+
+
+# Mod_Evasive Apache module, formerly known as mod_dosevasive, helps protect against DoS, DDoS (Distributed Denial of Service), 		     and brute force attacks on the Apache web server.
+
+
+    - name: Install mod_evasive for DDoS Attack protection
+      yum: name=mod_evasive update_cache=yes state=latest
+
+
+# It needs IP-Table installed to be able to block attacks
+
+# systemctl stop firewalld
+# systemctl disable firewalld
+
+# yum update && yum install iptables-services
+
+# systemctl enable iptables
+# systemctl start iptables
+# systemctl status iptables
+
+
+
+# yum update && yum install mod_security mod_evasive
+
+# Look for mod_evasive.conf & mod_security.conf
+# ls -l /etc/httpd/conf.d
+
+
+
+
+# make sure the following lines appear in the top level section of mod_evasive.conf and mod_security.conf, respectively:
+
+# LoadModule evasive20_module modules/mod_evasive24.so
+# LoadModule security2_module modules/mod_security2.so
+
+
+# cd /etc/httpd/modules
+# pwd
+# ls -l | grep -Ei '(evasive|security)'
 
 
 

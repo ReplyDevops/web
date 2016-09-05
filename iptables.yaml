@@ -1,0 +1,44 @@
+---
+- hosts: servers
+  remote_user: root
+
+
+
+#-A INPUT -m state --state RELATED,ESTABLISHED -j ACCEPT
+#-A INPUT -p icmp -j ACCEPT
+#-A INPUT -i lo -j ACCEPT
+#-A INPUT -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT
+#-A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
+#-A INPUT -j REJECT --reject-with icmp-host-prohibited
+#-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+
+
+
+  tasks:
+
+    - name: Stat of one update
+      stat: path=/root/add-port-80-done
+      register: firewall_stat
+
+
+    - name: Configure iptables 
+      command: "iptables -I INPUT 4 -p tcp -m state --state NEW -m tcp --dport 80 -j ACCEPT"
+      when: firewall_stat.stat.exists == False
+
+
+
+    - name: Register pot 80 has been added
+      shell: "echo done > /root/add-port-80-done"
+      when: firewall_stat.stat.exists == False
+
+
+
+    - name: Save iptables state
+      command: service iptables save
+
+
+    - name: Restart iptables
+      service: name=iptables state=restarted
+
+
+
