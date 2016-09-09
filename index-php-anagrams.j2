@@ -1,6 +1,6 @@
 <html>
 
-<body text="#FFFFFF" bgcolor='#000000'>
+<body text="#FFFFFF" bgcolor='#FFFFFF'>
 		
 <center>
 			 
@@ -78,9 +78,14 @@ function loyal($word,$i,$n) {
 //. "<br><br>";
    else {
         for ($j = $i; $j < $n; $j++) {
-          swap($word,$i,$j);
+         
+if ($i != $j)
+{
+ swap($word,$i,$j);
+}
           loyal($word, $i+1, $n);
-          swap($word,$i,$j); // backtrack.
+   
+#swap($word,$i,$j); // backtrack.
        }
    }
 }
@@ -92,7 +97,6 @@ function swap(&$word,$i,$j) {
     $word[$j] = $temp;
 }   
 
-#$word = $word;
 loyal($word,0,strlen($word)); // call the function with 0 start for $i and number of char for $n
 
 
