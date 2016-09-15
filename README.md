@@ -1,26 +1,8 @@
 
-# Infrastructure Consultant / DevOps
 
 An internet-facing web service accepting a single word and deriving all possible anagrams.
 
 Guidelines
-
-1. Base the solution on a platform and language you are familiar with.
-2. Ensure that the solution is developed using a source control system.
-3. Provide adequate tests demonstrating that the solution is complete and correct.
-4. Utilize a mechanism for deploying the solution to the platform.
-5. Confirm that the solution is secured appropriately for public consumption.
-
-
-
-### URL Info:-
-
- - LoadBalancer		http://loyaltyone.xyz
-
- - FrontEnd1  		http://fe1.loyaltyone.xyz
-
- - FrontEnd2		http://fe2.loyaltyone.xyz
-
 
 
 ### Used Tools:-
@@ -49,14 +31,6 @@ Guidelines
 - EC2
 - Route53 "HealthCheck"
 - CloudFormation
-
-####  DNS
-- Forward
-- CNAME
-- A (Host)
-
-####  GIT
-- https://github.com/rkhshan/loyalty
 
 ####  PHP/HTML
  
@@ -88,7 +62,7 @@ Guidelines
 
  - Clone loyalty public repo
 
-       $ git clone https://github.com/rkhshan/loyalty.git
+       $ git clone https://github.com/rkhshan/web.git
 
  - Change hosts IP address for production with AWS IP "YOUR-AWS.compute.amazonaws.com"
 
