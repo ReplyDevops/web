@@ -71,6 +71,10 @@ Guidelines
  - Run the ansible.sh file to build everything on both FE1/2
 
        $ ./ansible.sh
+       
+- firewalld open port 80
+- sudo firewall-cmd --permanent --zone=public --add-service=http
+- sudo firewall-cmd --reload
 
 
 
